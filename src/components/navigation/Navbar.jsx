@@ -75,9 +75,9 @@ const Navbar = () => {
   useEffect(() => {
     let tab = "/" + location.hash;
 
-    if (tab === "/") {
-      tab = "/#";
-    }
+    // if (tab === "/") {
+    //   tab = "/#";
+    // }
 
     setActiveLink(tab);
   }, [location.hash]);
@@ -95,17 +95,22 @@ const Navbar = () => {
           className={`mx-auto flex w-full flex-none flex-col justify-between transition duration-200 ease-in-out ${!navOpen ? "hidden translate-x-[150%]" : "translate-x-0 transition-all duration-200 ease-in-out"} gap-y-5 overflow-x-hidden text-[0.94rem] font-semibold text-slate-600 md:w-fit md:translate-x-0 md:flex-row md:items-center md:gap-x-5 md:gap-y-0 md:transition-none md:duration-200 md:ease-in-out`}
           id="navlinks"
         >
-          {navLinks.map((item) => (
-            <li
-              key={item.id}
-              className={`p-5 transition duration-500 ease-in-out ${activeLink === item.path ? "bg-white font-semibold text-black" : "text-white hover:text-white/60"}`}
-              onClick={() => handleClick(item.path)}
+          <li
+              className={`p-5 transition duration-500 ease-in-out ${activeLink === "/" ? "bg-white font-semibold text-black" : "text-white hover:text-white/60"}`}
+              onClick={() => handleClick("/")}
             >
-              <Link to={item.href ? item.href : item.path} target="_blank">
-                {item.name}
+              <Link to="/#">
+                Home
               </Link>
-            </li>
-          ))}
+          </li>
+          <li
+              className={`p-5 transition duration-500 ease-in-out ${activeLink === "/source" ? "bg-white font-semibold text-black" : "text-white hover:text-white/60"}`}
+              onClick={() => handleClick("/source")}
+            >
+              <Link to="https://newsapi.org/" target="_blank">
+                Source
+              </Link>
+          </li>
         </ul>
         <div className="relative flex w-fit items-center">
           <input
