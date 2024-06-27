@@ -85,7 +85,7 @@ const Navbar = () => {
   return (
     <header className="flex h-fit items-center justify-center">
       <nav
-        className="fixed top-0 z-50 flex w-full max-w-full flex-col justify-start gap-y-5 bg-red-500 px-32 md:flex-row md:items-center md:justify-between md:gap-y-0"
+        className="fixed top-0 z-50 flex w-full max-w-full flex-col justify-start gap-y-5 bg-red-600 px-32 md:flex-row md:items-center md:justify-between md:gap-y-0"
         id="navbar"
       >
         <Link to="/" className="text-xl font-bold text-white">
