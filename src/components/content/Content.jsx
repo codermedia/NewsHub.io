@@ -71,8 +71,6 @@ const Content = () => {
     });
   }, [window.scrollY]);
 
-  console.log(query, limit);
-
   const getNews = async (query, limit) => {
     await fetch(`https://news-hub-io-server.vercel.app/news/${query}/${limit}`, {
       method: "GET",
@@ -84,8 +82,6 @@ const Content = () => {
       .then((response) => response.json())
 
       .then((data) => {
-        console.log(data);
-
         if (data?.length > 0) {
           setIsLoaded(true);
 
