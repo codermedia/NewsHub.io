@@ -71,24 +71,28 @@ const Content = () => {
     });
   }, [window.scrollY]);
 
+  console.log(query, limit);
+
   const getNews = async (query, limit) => {
-    await fetch(`${baseUrl}?q=${query}&pageSize=${limit}&apiKey=${apiKey}`)
-      .then((response) => {
-        response.json().then((data) => {
-          console.log(data.articles);
+    await fetch(`http://localhost:3000/news/${query}/${limit}`, {
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      },
+    })
+      .then((response) => response.json())
 
-          if (data.articles?.length > 0) {
-            setIsLoaded(true);
+      .then((data) => {
+        console.log(data);
 
-            const filteredData = data.articles.filter(
-              (article) =>
-                article.urlToImage !== null && article.description !== null,
-            );
-            setNews(filteredData);
-          } else {
-            setNews([]);
-          }
-        });
+        if (data?.length > 0) {
+          setIsLoaded(true);
+
+          setNews(data);
+        } else {
+          setNews([]);
+        }
       })
       .catch((error) => {
         console.log(error);
