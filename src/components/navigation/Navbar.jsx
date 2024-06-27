@@ -3,20 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Context } from "../../contexts/Context";
 
-const navLinks = [
-  {
-    id: 1,
-    path: "/#",
-    name: "Home",
-  },
-  {
-    id: 2,
-    path: "/about",
-    name: "About",
-    href: "https://newsapi.org/",
-  },
-];
-
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(true);
   const [activeLink, setActiveLink] = useState("");
@@ -74,10 +60,6 @@ const Navbar = () => {
 
   useEffect(() => {
     let tab = "/" + location.hash;
-
-    // if (tab === "/") {
-    //   tab = "/#";
-    // }
 
     setActiveLink(tab);
   }, [location.hash]);
