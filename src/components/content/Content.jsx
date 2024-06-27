@@ -74,7 +74,7 @@ const Content = () => {
   console.log(query, limit);
 
   const getNews = async (query, limit) => {
-    await fetch(`http://localhost:3000/news/${query}/${limit}`, {
+    await fetch(`https://news-hub-io-server.vercel.app/news/${query}/${limit}`, {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
