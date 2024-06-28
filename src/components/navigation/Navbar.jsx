@@ -70,7 +70,7 @@ const Navbar = () => {
         className="fixed top-0 z-50 flex w-full max-w-full flex-col justify-start gap-y-5 bg-red-600 px-32 md:flex-row md:items-center md:justify-between md:gap-y-0"
         id="navbar"
       >
-        <Link to="https://news-hub-io.vercel.app/" className="text-xl font-bold text-white">
+        <Link to="/" onClick="javascript:window.location.reload()" className="text-xl font-bold text-white">
           NewsHub.io
         </Link>
         <ul
