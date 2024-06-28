@@ -70,7 +70,7 @@ const Navbar = () => {
         className="fixed top-0 z-50 flex w-full max-w-full flex-col justify-start gap-y-5 bg-red-600 px-32 md:flex-row md:items-center md:justify-between md:gap-y-0"
         id="navbar"
       >
-        <Link to="/" className="text-xl font-bold text-white">
+        <Link to="https://news-hub-io.vercel.app/" className="text-xl font-bold text-white">
           NewsHub.io
         </Link>
         <ul
@@ -103,7 +103,7 @@ const Navbar = () => {
             className="w-auto rounded-full p-2 px-4 text-[0.94rem] font-semibold capitalize text-slate-600 outline-none placeholder:text-slate-600"
             value={value}
             onChange={(e) => setValue(e.target.value.toLowerCase())}
-            placeholder="Search"
+            placeholder="Search here"
           />
           <div
             className={`absolute right-0 mr-3 cursor-pointer items-center bg-red-50 ${value ? "flex" : "hidden"}`}
