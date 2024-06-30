@@ -7,8 +7,8 @@ import Content from "./components/content/Content";
 import "./App.css";
 
 const App = () => {
-  const [query, setQuery] = useState();
-  const [limit, setLimit] = useState();
+  const [query, setQuery] = useState("World");
+  const [limit, setLimit] = useState(15);
 
   return (
     <main>
